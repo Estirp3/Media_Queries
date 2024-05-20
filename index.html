@@ -8,12 +8,22 @@
 </head>
 <body>
     <header>
-        <section class="navbar">
+        <nav class="navbar">
             <h1 id="logo">Estirp3</h1>
-        </section>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburger">&#9776;</label>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
-    <div class="container">
-        <div class="sidebar">
+    <main class="container">
+        <aside class="sidebar">
             <section class="menu">
                 <h1>Categorías</h1>
                 <ul>
@@ -23,36 +33,45 @@
                     <li>Mecha (7)</li>
                 </ul>
             </section>
-        </div>
-        <div class="content">
+        </aside>
+        <section class="content">
             <section class="productos">
                 <div class="card">
-                    <img src="asset/img/shonen.png" alt="">
+                    <img src="asset/img/shonen.png" alt="Shounen">
                     <h3>Shounen</h3>
                     <p>$24.700</p>
                     <button>Comprar</button>
                 </div>
                 <div class="card">
-                    <img src="asset/img/shoujo.png" alt="">
+                    <img src="asset/img/shoujo.png" alt="Shoujo">
                     <h3>Shoujo</h3>
                     <p>$14.700</p>
                     <button>Comprar</button>
                 </div>
                 <div class="card">
-                    <img src="asset/img/seinen.jpg" alt="">
+                    <img src="asset/img/seinen.jpg" alt="Seinen">
                     <h3>Seinen</h3>
                     <p>$4.700</p>
                     <button>Comprar</button>
                 </div>
                 <div class="card">
-                    <img src="asset/img/mecha.jpg" alt="">
+                    <img src="asset/img/mecha.jpg" alt="Mecha">
                     <h3>Mecha</h3>
                     <p>$24.700</p>
                     <button>Comprar</button>
                 </div>
             </section>
-        </div>
-    </div>
+            <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">&raquo;</a>
+            </div>
+        </section>
+    </main>
     <footer>
         <h2>@Estirp3</h2>
     </footer>

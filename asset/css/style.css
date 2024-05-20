@@ -5,12 +5,14 @@
 }
 
 body {
-    font-family: Arial, sans-serif; /* Opcional: Define una fuente por defecto */
+    font-family: Arial, sans-serif;
 }
 
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgba(114, 114, 206, 0.668);
-    text-align: center;
     padding: 14px 16px;
 }
 
@@ -19,43 +21,81 @@ body {
     font-size: 25px;
 }
 
-.container {
+.nav-links {
+    display: none;
+}
+
+.nav-links ul {
+    list-style-type: none;
+    padding: 0;
     display: flex;
-    flex-direction: column; /* Dirección columna por defecto para móviles */
-    min-height: 100vh;
+}
+
+.nav-links li {
+    margin-right: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 18px;
+}
+
+.hamburger {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-toggle:checked ~ .nav-links {
+    display: block;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "sidebar"
+        "content";
+    gap: 20px;
+    padding: 20px;
 }
 
 .sidebar {
-    background-color: #f1f1f1; /* Color de fondo para visualización */
+    grid-area: sidebar;
+    background-color: #f1f1f1;
     padding: 20px;
 }
 
 .content {
-    background-color: #fff; /* Color de fondo diferente para diferenciar */
-    padding: 20px; /* Espacio alrededor del contenido */
+    grid-area: content;
+    background-color: #fff;
+    padding: 20px;
 }
 
 .menu {
-    padding: 20px;
-    background-color: #f9f9f9; /* Ligeramente distinto al sidebar para contraste */
+    background-color: #f9f9f9;
 }
 
 .menu h1 {
-    margin-bottom: 10px; /* Espacio debajo del título de la sección */
+    margin-bottom: 10px;
 }
 
 .menu ul {
-    list-style-type: none; /* Remueve los bullets de la lista */
+    list-style-type: none;
 }
 
 .menu li {
     background-color: #f1f1f1;
-    margin-bottom: 8px; /* Espacio entre los items */
+    margin-bottom: 8px;
     padding: 10px;
     font-weight: 900;
     color: rgb(0, 0, 0);
-    cursor: pointer; /* Cambia el cursor para indicar que es clickable */
-    border: 1px solid #ddd; /* Borde sutil */
+    cursor: pointer;
+    border: 1px solid #ddd;
 }
 
 .menu li:hover:not(.active) {
@@ -65,27 +105,26 @@ body {
 
 .productos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adaptable a pantallas pequeñas */
-    gap: 20px; /* Espacio entre tarjetas */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
 }
 
 .card {
-    background-color: #fff; /* Fondo blanco para resaltar el producto */
+    background-color: #fff;
     padding: 10px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para dar profundidad */
-    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    height: auto; /* Altura automática basada en el contenido */
 }
 
 .card img {
-    max-width: 100%; /* Imagen ocupa todo el ancho disponible */
+    max-width: 100%;
     height: auto;
-    border-radius: 4px; /* Bordes ligeramente redondeados para la imagen */
+    border-radius: 4px;
 }
 
 .card h3 {
@@ -114,8 +153,12 @@ button:hover {
     background-color: #0056b3;
 }
 
+img {
+    width: 400px;
+    height: 200px;
+}
+
 footer {
-    flex-shrink: 0; /* Asegura que el footer no se reduzca */
     text-align: center;
     padding: 10px;
     background-color: #222;
@@ -123,22 +166,52 @@ footer {
     width: 100%;
 }
 
-/* Media query para pantallas de escritorio (a partir de 576px) */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.pagination a.active {
+    background-color: #007BFF;
+    color: white;
+    border: 1px solid #007BFF;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
 @media (min-width: 576px) {
+    .navbar {
+        justify-content: flex-start;
+    }
+
+    .nav-links {
+        display: block;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
     .container {
-        flex-direction: row; /* Cambia a dirección de fila para pantallas más anchas */
-    }
-
-    .sidebar {
-        flex: 1; /* Ocupa 1 fracción del espacio disponible */
-    }
-
-    .content {
-        flex: 3; /* Ocupa 3 fracciones del espacio disponible, haciéndolo más ancho */
+        grid-template-areas:
+            "sidebar content";
+        grid-template-columns: 1fr 3fr;
     }
 
     .productos {
-        grid-template-columns: repeat(3, 1fr); /* Define 3 columnas de igual ancho */
-        gap: 50px; /* Espacio entre tarjetas */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
