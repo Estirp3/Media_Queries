@@ -1,79 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="asset/css/style.css">
-    <title>E-Commerce</title>
+    <title>Electric Cars Store</title>
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <h1 id="logo">Estirp3</h1>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle">
-            <label for="menu-toggle" class="hamburger">&#9776;</label>
-            <div class="nav-links">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
+    <!-- Página Principal -->
+    <div class="container-principal">
+        <!-- Menú de Navegación -->
+        <nav class="container-nav">
+            <!-- Nombre e ícono del sitio -->
+            <div class="dato-principal">
+                <span class="material-symbols-outlined">electric_car</span>
+                <p class="nombre-electrico"> Electric Cars </p>
+            </div>
+            <!-- Menú de Navegación - Hamburguesa Mobile -->
+            <div class="menu-superior">
+                <button type="button" class="material-symbols-outlined icono">reorder</button>
+            </div>
+            <!-- Menú de Navegación - Tablet y Escritorio -->
+            <div class="menu-lateral">
+                <ul class="lista-menu-lateral">
+                    <li><a href="">Inicio</a></li>
+                    <li><a href="">Catálogo</a></li>
+                    <li><a href="">Ofertas</a></li>
+                    <li><a href="">Contacto</a></li>
                 </ul>
             </div>
         </nav>
-    </header>
-    <main class="container">
-        <aside class="sidebar">
-            <section class="menu">
-                <h1>Categorías</h1>
-                <ul>
-                    <li>Shounen (50)</li>
-                    <li>Shoujo (30)</li>
-                    <li>Seinen (20)</li>
-                    <li>Mecha (7)</li>
-                </ul>
-            </section>
-        </aside>
-        <section class="content">
-            <section class="productos">
-                <div class="card">
-                    <img src="asset/img/shonen.png" alt="Shounen">
-                    <h3>Shounen</h3>
-                    <p>$24.700</p>
-                    <button>Comprar</button>
-                </div>
-                <div class="card">
-                    <img src="asset/img/shoujo.png" alt="Shoujo">
-                    <h3>Shoujo</h3>
-                    <p>$14.700</p>
-                    <button>Comprar</button>
-                </div>
-                <div class="card">
-                    <img src="asset/img/seinen.jpg" alt="Seinen">
-                    <h3>Seinen</h3>
-                    <p>$4.700</p>
-                    <button>Comprar</button>
-                </div>
-                <div class="card">
-                    <img src="asset/img/mecha.jpg" alt="Mecha">
-                    <h3>Mecha</h3>
-                    <p>$24.700</p>
-                    <button>Comprar</button>
-                </div>
-            </section>
-            <div class="pagination">
-                <a href="#">&laquo;</a>
-                <a href="#">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">&raquo;</a>
+        <!-- Sección de filtros de búsqueda -->
+        <section>
+            <div>
+                <p>Ordenar Por:</p>
             </div>
+            <!-- Lista de opciones -->
+            <select class="lista-select">
+                <option value="precio">Precio</option>
+                <option value="marca">Marca</option>
+                <option value="modelo">Modelo</option>
+            </select>
         </section>
-    </main>
-    <footer>
-        <h2>@Estirp3</h2>
-    </footer>
+        <!-- Sección Principal - Productos -->
+        <main>
+            <!-- Container de los productos -->
+            <div class="grilla-pdtos">
+                <!-- Tarjeta con cada producto -->
+                <div class="card ">
+                    <img src="./asset/img/BMW-iX3.jpg" alt="Electric Cards">
+                    <p class="txt-auto"><strong>Marca: </strong>BMW</p>
+                    <p class="txt-auto"><strong>Model: </strong>iX3</p>
+                    <button class="btn-ver-mas">Ver más</button>
+                </div>
+                <div class="card">
+                    <img src="./asset/img/Chevrolet-BoltEUV-AzulMetalico.jpg" alt="Electric Cards">
+                    <p class="txt-auto"><strong>Marca: </strong>Chevrolet</p>
+                    <p class="txt-auto"><strong>Modelo: </strong>Bolt Euv</p>
+                    <button class="btn-ver-mas">Ver más</button>
+                </div>
+                <div class="card ">
+                    <img src="./asset/img/Dolphin-mini-ev-verde.jpg" alt="Electric Cards">
+                    <p class="txt-auto"><strong>Marca: </strong>BYD</p>
+                    <p class="txt-auto"><strong>Model: </strong>Dolphin Mini</p>
+                    <button class="btn-ver-mas">Ver más</button>
+                </div>
+                <div class="card">
+                    <img src="./asset/img/hyundai-kona.jpg" alt="Electric Cards">
+                    <p class="txt-auto"><strong>Marca: </strong>Hyundai</p>
+                    <p class="txt-auto"><strong>Model: </strong>Kona</p>
+                    <button class="btn-ver-mas">Ver más</button>
+                </div>
+                <div class="card">
+                    <img src="./asset/img/Kia-EV9.jpg" alt="Electric Cards">
+                    <p class="txt-auto"><strong>Marca: </strong>Kia</p>
+                    <p class="txt-auto"><strong>Model: </strong>EV9</p>
+                    <button class="btn-ver-mas">Ver más</button>
+                </div>
+                <div class="card">
+                    <img src="./asset/img/kwid-etech-intens-plata.jpg" alt="Electric Cards">
+                    <p class="txt-auto"><strong>Marca: </strong>Renault</p>
+                    <p class="txt-auto"><strong>Model: </strong>E-Kwid</p>
+                    <button class="btn-ver-mas">Ver más</button>
+                </div>
+                <div class="card">
+                    <img src="./asset/img/MGZSEVAzul.jpg" alt="Electric Cards">
+                    <p class="txt-auto"><strong>Marca: </strong>MG</p>
+                    <p class="txt-auto"><strong>Model: </strong>ZS EV</p>
+                    <button class="btn-ver-mas">Ver más</button>
+                </div>
+                <div class="card">
+                    <img src="./asset/img/NissanLeafGris.jpg" alt="Electric Cards">
+                    <p class="txt-auto"><strong>Marca: </strong>Nissan</p>
+                    <p class="txt-auto"><strong>Model: </strong>Leaf</p>
+                    <button class="btn-ver-mas">Ver más</button>
+                </div>
+            </div>
+            <!-- Paginación en la container de productos -->
+            <div class="paginacion">
+                <p ><a href="#" class="numeros"><<</a></p>
+                <p ><a href="#" class="numeros">1</a></p>
+                <p ><a href="#" class="numeros">2</a></p>
+                <p ><a href="#" class="numeros">3</a></p>
+                <p ><a href="#" class="numeros">>></a></p>
+            </div>
+        </main>
+        <!-- Pie de página -->
+        <footer>
+            <!-- Íconos de las RRRSS en footer  -->
+            <div class="iconos-footer">
+                <a href="https://www.facebook.com/" target="_blank"><img class="icono-img" src="./asset/img/Facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/" target="_blank"><img class="icono-img" src="./asset/img/Instagram.png" alt="Instagram"></a>
+            </div>
+            <!-- Txt en footer -->
+            <div class="txt-footer">
+                Todos los derechos reservados
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
